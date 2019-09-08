@@ -12,5 +12,15 @@ print(mydict)
 mynewdict = {}
 newnames = ['Ella', 'Hava', 'David', 'Hava', 'Ella', 'Ella']
 for newname in newnames:
-    mynewdict[newname] = mynewdict.get(newname, 0) + 1 #if newname is not in dict add it with default value of 0, otherwise add 1 to it
+    mynewdict[newname] = mynewdict.get(newname, 0) + 1
+    #if newname is not in dict add it with default value of 0, otherwise add 1 to it
+    #notice that when a new name is added, it is set to 0 and then immediately 1 is added, so a newly added name is initially set to 1
 print(mynewdict)
+
+print(list(mynewdict))
+print(mynewdict.keys())
+print(mynewdict.values())
+print(mynewdict.items())
+
+for x,y in mynewdict.items():
+    print(x,y)

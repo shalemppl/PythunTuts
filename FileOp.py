@@ -44,7 +44,11 @@ for line in sfile3:
 
 #Prompt for a file name:
 pfilename = input('Enter a file name: ')
-pfile = open('mbox-short.txt')   
+try:                           #The try and except functions make sure that we do not get a traceback if the file is not found
+    pfile = open(pfilename)
+except:
+    print('File ', pfilename, ' cannot be opened or not found.')
+    quit ()                     #If the file is not found, the program quits naturally, instead of giving a traceback.  Otherwise the file is opened.
 count=0
 for line in pfile:
     if line.startswith('Subject:'):

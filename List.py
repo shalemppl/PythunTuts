@@ -45,4 +45,15 @@ mynewstring = 'this;is;a;new;string'
 mynewlist = mynewstring.split()
 print(mynewlist, ' ', len(mynewlist))
 myupdatedlist = mynewstring.split(';') #now a ; will be used as the delimiter
-print(myupdatedlist, ' ', len(myupdatedlist))
+print(myupdatedlist, ' ', len(myupdatedlist), '\n')
+
+# Print the day of the week of each email in a file
+fhandle = open('mbox-short.txt')
+for line in fhandle:
+    line.rstrip() #removes trailing newline
+    wds = line.split() #splits the line into a list of words
+    if len(wds) < 1 : continue #make sure the line is not blank (this is a Guardian code)
+    if wds[0] != 'From' : continue #if the first word of the liune is not From, go to the next line
+    #another way to do it: if len(wds) < 1 or wds[0] != 'From' : continue
+    print(wds[2]) #otherwise print the third word in the line, which is the day of the week
+fhandle.close()

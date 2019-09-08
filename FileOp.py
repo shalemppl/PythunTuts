@@ -1,3 +1,5 @@
+# Tutorial at https://www.youtube.com/watch?v=8DvywoWv6fI&t=13580s
+
 #open the file and put it in a handle named "file"
 file = open('mbox.txt')
 #read each line in the file and print it out
@@ -14,12 +16,12 @@ print('Line Count:', count)
 #read in an entire file at once (instead of by line)
 wfile = open('mbox-short.txt')
 inp = wfile.read()
-print(len(inp))
+print(len(inp))  #print out the legth of the file, in number of characters
 
 #print the first 20 characters of the file
-print(inp[:20])
+print(inp[:20]) #same as [0:20]
 
-#search throug a file
+#search through a file
 sfile = open('mbox-short.txt')
 for line in sfile:
     line = line.rstrip()  #strips the white space (or extra /n) at the end of the lines
@@ -44,7 +46,7 @@ for line in sfile3:
 
 #Prompt for a file name:
 pfilename = input('Enter a file name: ')
-pfile = open('mbox-short.txt')   
+pfile = open('mbox-short.txt')
 count=0
 for line in pfile:
     if line.startswith('Subject:'):

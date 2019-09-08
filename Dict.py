@@ -24,3 +24,22 @@ print(mynewdict.items())
 
 for x,y in mynewdict.items():
     print(x,y)
+
+#Counting words in a file:
+fname = input('Enter file nane: ')
+fhandle = open(fname)
+
+counts = {}
+for line in fhandle:
+    words = line.split()
+    for word in words:
+        counts[word] = counts.get(word,0) + 1
+fhandle.close()
+
+bigCount = None
+bigWord = None
+for word,count in counts.items():
+    if bigCount is None or count > bigCount:
+        bigWord = word
+        bigCount = count
+print(bigWord, bigCount)

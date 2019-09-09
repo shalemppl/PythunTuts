@@ -27,6 +27,7 @@ for x,y in mynewdict.items():
 
 #Counting words in a file:
 fname = input('Enter file nane: ')
+if fname == '' : fname='clown.txt'
 fhandle = open(fname)
 
 counts = {}

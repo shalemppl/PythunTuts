@@ -25,7 +25,7 @@ print(mynewdict.items())
 for x,y in mynewdict.items():
     print(x,y)
 
-#Counting words in a file:
+#Finding the most common word in a file:
 fname = input('Enter file name: ')
 if fname == '' : fname='clown.txt'
 fhandle = open(fname)
